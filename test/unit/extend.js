@@ -6,6 +6,13 @@ describe('extend.js', function(){
     beforeEach(function(){
         A = function(){
             this.initialize();
+            this.sMethodA = function(){
+                return 'SA:A';
+            };
+
+            this.sMethodB = function(){
+                return 'SA:B';
+            };
         };
 
         A.prototype.initialize = function(){
@@ -20,13 +27,7 @@ describe('extend.js', function(){
             return 'A:B';
         };
 
-        A.sMethodA = function(){
-            return 'SA:A';
-        };
-
-        A.sMethodB = function(){
-            return 'SA:B';
-        };
+        
 
         B = extend(A, {
             methodB : function(){
