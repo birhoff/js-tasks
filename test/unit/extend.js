@@ -2,17 +2,10 @@
 
 describe('extend.js', function(){
     var A, B, a, b;
-    
+
     beforeEach(function(){
         A = function(){
             this.initialize();
-            this.sMethodA = function(){
-                return 'SA:A';
-            };
-
-            this.sMethodB = function(){
-                return 'SA:B';
-            };
         };
 
         A.prototype.initialize = function(){
@@ -27,7 +20,13 @@ describe('extend.js', function(){
             return 'A:B';
         };
 
-        
+        A.sMethodA = function(){
+            return 'SA:A';
+        };
+
+        A.sMethodB = function(){
+            return 'SA:B';
+        };
 
         B = extend(A, {
             methodB : function(){
@@ -43,8 +42,8 @@ describe('extend.js', function(){
             }
         });
 
-        a = new A();
-        b = new B();
+        a = new A;
+        b = new B;
     });
 
     it('should verify that b is an instanceOf A & B', function(){
