@@ -74,5 +74,7 @@ var StringsBasic = {
      * @param {string} str
      * @returns {boolean}
      */
-    isPalindrome : function(str) {}
+    isPalindrome : function(str) {
+        return str.replace(/[ ,\.]+/g,'').toLocaleLowerCase() == str.replace(/[ ,\.]+/g,'').split('').reverse().join('').toLocaleLowerCase();
+    }
 };
