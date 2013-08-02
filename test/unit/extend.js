@@ -47,7 +47,7 @@ describe('extend.js', function(){
     });
 
     it('should verify that b is an instanceOf A & B', function(){
-        assert.instanceOf(b, A);
+        assert.instanceOf(a, A);
         assert.instanceOf(b, B);
     });
 
