@@ -45,7 +45,31 @@ var StringsBasic = {
      * @param {string} str
      * @returns {Array.<string>}
      */
-    wordsBeginCapital : function(str) {},
+    wordsBeginCapital : function(str) {
+        var allWords = str.replace(/[\.,]+/gi).split(' '),
+            result = [];
+        
+        for (var i = 0; i < allWords.length; i++) {
+            if (isUpperCase(allWords[i].charAt(0))) {
+                result.push(allWords[i]);
+            }
+        }
+
+        return result;
+
+        function isUpperCase(character) {
+            if (!isNaN(character * 1)) {
+                return false;
+            } else {
+                if (character == character.toUpperCase()) {
+                    return true;
+                }
+                return false;
+            }
+
+        }
+
+    },
     /**
      * @param {string} str
      * @returns {boolean}
