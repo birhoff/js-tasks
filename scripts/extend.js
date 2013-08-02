@@ -1,7 +1,7 @@
 function extend(P, px, sx){
       return (function (){
         var f = function () {
-            P.call(this);
+            P.apply(this, Array.prototype.splice.call(arguments,0,1));
 
         };
     f.prototype = new P();
