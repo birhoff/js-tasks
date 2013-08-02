@@ -19,7 +19,7 @@ var StringsBasic = {
             result = [];
         
         for(var i=0;i<allWords.length;i++){
-            if(~allWords[i].indexOf(sub)){
+            if(~allWords[i].toLocaleLowerCase().indexOf(sub.toLocaleLowerCase())){
                 result.push(allWords[i]);
             }
         }
