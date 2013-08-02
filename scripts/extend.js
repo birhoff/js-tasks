@@ -4,6 +4,7 @@ function extend(P, px, sx){
         this.initialize();
     };
     f.prototype = new P();
+    mixin(f, P);
     mixin(f, sx);
     mixin(f.prototype, px);
     return f;
