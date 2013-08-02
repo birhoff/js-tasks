@@ -4,7 +4,10 @@ var StringsBasic = {
      * @param {string} sub
      * @returns {number}
      */
-    subCount : function(str, sub) {},
+    subCount : function(str, sub) {
+        var match = str.match(sub);
+        return !match ? 0 : match.length;
+    },
 
     /**
      * @param {string} str
