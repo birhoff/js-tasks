@@ -30,7 +30,17 @@ var StringsBasic = {
      * @param {string} sub
      * @returns {Array.<string>}
      */
-    wordsNotContains : function(str, sub) {},
+    wordsNotContains : function(str, sub) {
+        var allWords = str.replace(/[\.,]+/gi).split(' '),
+            result = [];
+        
+        for(var i=0;i<allWords.length;i++){
+            if(!~allWords[i].toLocaleLowerCase().indexOf(sub.toLocaleLowerCase())){
+                result.push(allWords[i]);
+            }
+        }
+        return result;
+    },
     /**
      * @param {string} str
      * @returns {Array.<string>}
