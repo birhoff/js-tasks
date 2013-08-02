@@ -15,7 +15,7 @@ var StringsBasic = {
      * @returns {Array,<string>}
      */
     wordsContains : function(str, sub) {
-        var allWords = str.replace(/[\.,]+/gi).split(' '),
+        var allWords = str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').split(' '),
             result = [];
         
         for(var i=0;i<allWords.length;i++){
@@ -31,7 +31,7 @@ var StringsBasic = {
      * @returns {Array.<string>}
      */
     wordsNotContains : function(str, sub) {
-        var allWords = str.replace(/[\.,]+/gi).split(' '),
+        var allWords = str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').split(' '),
             result = [];
         
         for(var i=0;i<allWords.length;i++){
@@ -46,7 +46,7 @@ var StringsBasic = {
      * @returns {Array.<string>}
      */
     wordsBeginCapital : function(str) {
-        var allWords = str.replace(/[\.,]+/gi).split(' '),
+        var allWords = str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').split(' '),
             result = [];
         
         for (var i = 0; i < allWords.length; i++) {
@@ -75,6 +75,6 @@ var StringsBasic = {
      * @returns {boolean}
      */
     isPalindrome : function(str) {
-        return str.replace(/[ ,\.]+/g,'').toLocaleLowerCase() == str.replace(/[ ,\.]+/g,'').split('').reverse().join('').toLocaleLowerCase();
+        return str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').toLocaleLowerCase() == str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').split('').reverse().join('').toLocaleLowerCase();
     }
 };
