@@ -15,8 +15,15 @@ var StringsBasic = {
      * @returns {Array,<string>}
      */
     wordsContains : function(str, sub) {
-        var match = str.match(new RegExp(sub,'gi'));
-        return !match ? [] : match;
+        var allWords = str.replace(/[\.,]+/gi).split(' '),
+            result = [];
+        
+        for(var i=0;i<allWords.length;i++){
+            if(~allWords[i].indexOf(sub)){
+                result.push(allWords[i]);
+            }
+        }
+        return result;
     },
     /**
      * @param {string} str
