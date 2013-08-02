@@ -5,7 +5,7 @@ var StringsBasic = {
      * @returns {number}
      */
     subCount : function(str, sub) {
-        var match = str.match(sub);
+        var match = str.match(new RegExp(sub,'gi'));
         return !match ? 0 : match.length;
     },
 
@@ -15,7 +15,7 @@ var StringsBasic = {
      * @returns {Array,<string>}
      */
     wordsContains : function(str, sub) {
-        var match = str.match(sub);
+        var match = str.match(new RegExp(sub,'gi'));
         return !match ? [] : match;
     },
     /**
