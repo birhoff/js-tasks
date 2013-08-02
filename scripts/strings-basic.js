@@ -14,7 +14,10 @@ var StringsBasic = {
      * @param {string} sub
      * @returns {Array,<string>}
      */
-    wordsContains : function(str, sub) {},
+    wordsContains : function(str, sub) {
+        var match = str.match(sub);
+        return !match ? [] : match;
+    },
     /**
      * @param {string} str
      * @param {string} sub
