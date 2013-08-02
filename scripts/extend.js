@@ -1,9 +1,10 @@
 function extend(P, px, sx){
-    var f = function () {
+     var f = function () {
         this.initialize();
+        mixin(this, sx);
     };
     f.prototype = new P();
-    mixin(f, sx);
+
     mixin(f.prototype, px);
     return f;
 }
