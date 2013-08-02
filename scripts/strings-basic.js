@@ -75,6 +75,6 @@ var StringsBasic = {
      * @returns {boolean}
      */
     isPalindrome : function(str) {
-        return str.replace(/[ &\/\\#,+()$~%.'":*?<>{}]/g,'').toLocaleLowerCase() == str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').split('').reverse().join('').toLocaleLowerCase();
+        return str.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g,'').toLocaleLowerCase() == str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').split('').reverse().join('').toLocaleLowerCase();
     }
 };
