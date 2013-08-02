@@ -2,6 +2,15 @@
 
 describe('extend.js', function(){
     var A, B, a, b;
+    
+    function extend(Child, Parent) {
+    var F = function() { }
+    F.prototype = Parent.prototype;
+    Child.prototype = new F();
+    Child.prototype.constructor = Child;
+    Child.superclass = Parent.prototype;
+    }
+
 
     beforeEach(function(){
         A = function(){
@@ -43,11 +52,11 @@ describe('extend.js', function(){
         });
 
         a = new A();
-        b = B;
+        b = new B();
     });
 
     it('should verify that b is an instanceOf A & B', function(){
-        assert.instanceOf(a, A);
+        assert.instanceOf(b, A);
         assert.instanceOf(b, B);
     });
 
