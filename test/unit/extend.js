@@ -42,8 +42,8 @@ describe('extend.js', function(){
             }
         });
 
-        a = new A;
-        b = new B;
+        a = new A();
+        b = new B();
     });
 
     it('should verify that b is an instanceOf A & B', function(){
