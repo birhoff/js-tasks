@@ -18,7 +18,7 @@ var mixin = (function () {
     for (var p in {toString: null}) hasIEError = false;
 
     if (!hasIEError) {
-        return function extend(dst) {
+        return function mixin(dst) {
             for (var i = 0; i < arguments.length; i++) {
                 var source = arguments[i];
                 for (var prop in source) {
@@ -29,7 +29,7 @@ var mixin = (function () {
         }
     } else {
         var prototypeProps = ["toString", "valueOf", "constructor", "hasOwnProperty", "toLocaleString", "isPrototypeOf", "propertyIsEnumerable"];
-        return function extend(dst) {
+        return function mixin(dst) {
             for (var i = 0; i < arguments.length; i++) {
                 var source = arguments[i];
 
